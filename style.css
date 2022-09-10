@@ -1,0 +1,943 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&family=Josefin+Slab:ital,wght@0,100;0,300;0,400;1,100;1,200;1,300;1,400;1,500&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400&display=swap');
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/brands.min.css');
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.1/sql-wasm.js');
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+
+}
+/* Criei variáveis para modificar as fontes em um lugar só */
+:root{
+    --font-primary: "Baloo Da 2", serif;
+    --front-secundary:"Josefin Slab", serif;
+    --font-action:"Mulish", serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.hamburguer{
+  /*  background-color: red; */
+    width: 2rem;
+    height: 2rem;
+    position: fixed;
+    z-index: 100;
+    right: 2rem;
+    top:2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+
+.show-menu .hamburguer{
+    right: 16rem;
+
+}
+
+.line{
+    width: 100%;
+    height: .1rem;
+    background-color: #fff;
+    box-shadow: 0.1rem 0.1rem 1px rgb(0, 0, 0);
+    transition: all 1s;
+
+}
+
+/* Faz a animação do icone hamburguer*/
+.show-menu #line1{
+    transform: rotate(45deg) translate(.3rem,.45rem);
+}
+
+.show-menu #line2{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.show-menu #line3{
+    transform: rotate(-45deg) translate(.3rem,-.45rem);
+    
+}
+.hamburguer span{
+position: absolute;
+left: 3rem;
+height: 2rem;
+width: 6rem;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: rgba(243, 227, 227, 0.979);
+font-family: var(--font-action);
+opacity: 0;
+
+}
+
+/*Antes do span usa a setinha */
+.hamburguer span::before{
+
+    content:"" ;
+    position: absolute;
+    border-right: .5rem solid rgba(243, 227, 227, 0.979);
+    border-top: .5rem solid transparent;
+    border-left: .5rem solid transparent;
+    border-bottom: .5rem solid transparent;
+    left: -1rem;
+
+
+
+}
+
+.show-menu .hamburguer:hover span{
+opacity: 1;
+
+}
+header{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.img-wrapper{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+
+.img-wrapper img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9; 
+    animation: zom 15s;
+}
+
+
+
+@keyframes zom{
+
+    0%{
+        transform: scale(1.3);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+
+}
+.banner{
+
+    position: absolute;
+    top:35%;
+    left: 8%;
+}
+
+.banner h1{
+
+    color: #ffffff;
+    font-size: 3.5rem;
+    font-family: var(--font-primary) ; /* O setif é caso o site do google esteja fora do ar */
+    font-weight: 200;
+    text-shadow: .3rem .1rem 2px rgba(0, 0, 0, .4);
+    animation: moveBanner 1s 0.5s forwards;
+    opacity: 0;
+    
+}
+
+.banner p{
+    font-family: var(--front-secundary);
+    color:#fff;
+    font-size: 2em;
+    text-shadow: .3rem .1rem 2px rgba(0, 0, 0, .4);
+    margin-bottom: 0.5em;
+    animation: moveBanner 1s 0.7s forwards;
+    opacity: 0;
+
+
+}
+
+.banner button{
+    font-family: var(--font-action);
+    text-transform: uppercase;
+    background: rgba(22, 21, 21, 0.966);
+    color:#fff;
+    box-shadow: 0.2rem 0.1rem 1px rgba(0, 0, 0, 0.5);
+    padding: 0.7rem 1.5rem;
+    border: none;   
+    border-radius: 3px;
+    cursor: pointer;
+    animation: moveBanner 1s 0.9s forwards;
+    opacity: 0;
+
+
+
+}
+/* alguma reação ao passar o curso */
+.banner button:hover{
+    opacity: 0.8;
+}
+/* resonsavel pela a animação */
+@keyframes moveBanner {
+    
+    0%{
+        transform: translateY(10rem) rotateY(-30deg);
+        
+
+    }
+    100%{
+      transform: translateY(0) rotateY(0);
+      opacity: 1;
+    }
+
+
+}
+
+.show-menu .sidebar{
+    right: 0;
+
+}
+.sidebar{
+    width: 20rem;
+    height: 100vh;
+    background-color: rgba(22, 21, 21, 0.97);
+    position: fixed;
+    top: 0;
+    right: -20rem;
+    transition: all 1s;
+    z-index: 99; /* Ao abrir o menu a imagem fica por baixo */
+
+}
+
+.menu {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.menu-item{
+    text-align: center ;
+    margin-bottom: .3rem;
+}
+
+.menu-link{
+    font-family: var(--font-action);
+    font-size: 2rem;
+    color: rgba(243, 227, 227, 0.979);
+
+}
+
+.menu-link:hover{
+    color: rgba(143, 140, 140, 0.7);
+    transition: color 1s;
+}
+
+.social-media{
+    background-color:rgba(243, 227, 227, 0.8);
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+
+
+}
+.social-media i{
+    background-color: rgba(243, 227, 227, 0.8);
+    color: rgba(22, 21, 21, 0.9);
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 2rem;
+    font-style: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: background-color 1s;
+    
+
+}
+
+.social-media i:hover{
+    background-color: rgba(53, 48, 48, 0.616);
+    cursor: pointer;
+
+}
+
+
+/* Area de conhecimentos no grid, responsavel pelas posições dos icones,textos */
+.conhecimentos{
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(7, 4.5rem);
+    row-gap: .5rem;
+  
+
+}    
+
+.conhecimento:nth-child(1){
+    grid-column: 3 / 6;
+    grid-row: 1 / 2;
+}
+
+
+.conhecimento:nth-child(2){
+    grid-column: 3 / 6;
+    grid-row: 3 / 5;
+}
+
+
+
+.conhecimento:nth-child(3){
+    grid-column: 3 / 8;
+    grid-row: 5 / -1;
+}
+
+
+.conhecimento:nth-child(4){
+    grid-column: 10 / 14;
+    grid-row: 1 / 3;
+}
+
+.conhecimento:nth-child(5){
+    grid-column: 12 / 15;
+    grid-row: 3 / 5;
+}
+
+.conhecimento:nth-child(6){
+    grid-column: 11/ 16;
+    grid-row: 6 / 7;
+}
+
+/* Sessão de Conhecimentos */
+
+.session-header{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+.session-header h1{
+    font-family: var(--font-primary);
+    font-size: 3rem;
+    color: rgb(59, 56, 56);
+    border-bottom: solid 3px rgb(36, 34, 34);
+    margin-bottom: 1.5rem;
+}
+
+.conhecimento-header{
+    display: flex;
+    align-items: center;
+    color: rgb(36, 34, 34);
+}
+
+.conhecimento-header i{
+    font-size: 2.5rem;
+    font-style: normal;
+   
+    
+
+}
+
+.conhecimento-header h3{
+    font-family: var(--front-secundary);
+    font-size: 2rem;
+    padding-left: 1rem;
+}
+
+.conhecimento-text{
+    font-family: var(--front-secundary);
+    margin-top: 1rem;
+
+
+}
+.conhecimentos-img-wrapper{
+    grid-column: 6 / 11;
+    grid-row: 3 / 6;
+    width: 100%;
+}
+
+.conhecimentos-img-wrapper img{
+    object-fit: cover;
+    width: 100%;
+
+}
+
+/* Cores dos icones das linguagens e tecnologias, que são tipos de fontes*/
+
+.fab.fa-html5 {
+color: rgba(201, 54, 0, .9);
+
+}
+
+.fab.fa-css3-alt{
+
+    color: rgba(9, 70, 182, .9);
+}
+
+.fab.fa-js{
+
+color: rgb(243, 209, 13);    
+}
+
+.fab.fa-bootstrap{
+
+    color:rgba(87, 5, 146, .9)
+
+}
+
+.fab.fa-java{
+
+    color: rgb(14, 104, 207);
+
+}
+
+.fa.fa-database{
+
+    color: rgba(68, 67, 67, 0.9);
+}
+/* Sessão de projetos */
+.projetos{
+
+   display: flex;
+   justify-content: space-evenly;
+
+}
+
+.card{
+    width: 18rem;
+    height: 28rem;
+    position: relative;
+}
+
+.card-img-wrapper{
+
+    width: 100%;
+    height: 100%;
+    background-color: rgb(59, 56, 56);
+    border-radius: .5rem;
+    transition:  opacity .3s;
+}
+
+.card-img-wrapper img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: .5rem;
+    opacity: .8;
+}
+
+.card:hover .card-img-wrapper img{
+    opacity: .5;
+}
+
+.card-info{
+
+position: absolute;
+bottom:0;
+opacity: 0;
+visibility: hidden;
+padding: 2rem;
+text-shadow: 0.3 0.2rem 0.3rem rgba(0, 0, 0, 0.7);
+transition: all .3s;
+
+
+}
+
+.card-info h2{
+
+    font-family: var(--front-secundary);
+    font-size: 2rem;
+    font-weight: 550;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.904);
+    
+}
+
+.card-info h3{
+    font-family: var(--front-secundary);
+    font-weight: bolder;
+    color: rgba(243, 244, 245, 0.767);
+    margin-bottom: 1.5rem;
+}   
+
+.card-info p{
+    font-family: var(--front-secundary);
+    color: #eee;
+    font-weight: 400;
+    width: 80%;
+    margin-bottom: 1.5rem ;
+}
+
+.card-info button{
+
+    width: 8rem;
+    height: 2.5rem;
+    background: rgba(22, 21, 21, 0.966);
+    color:#fff;
+    box-shadow: 0 0.1rem 8rem rgba(0, 0, 0, 0.5);
+    border: none;   
+    border-radius: .5rem;
+    cursor: pointer;
+    font-family: var(--font-action);
+    font-size: 1rem;
+    
+
+}
+
+.card:hover .card-info{
+
+
+    bottom: 2rem;
+    opacity: 1;
+    visibility: visible;
+
+}
+
+/* Responsividade */
+
+@media  screen and (max-width: 700px){
+
+    .conhecimentos{
+        width: 100%;
+        height: 100vh;
+
+    }
+
+    body{
+
+        width: 100%;
+        height: 100vh;
+    
+      }
+     
+
+    .session-header h1{
+        font-family: var(--font-primary);
+        font-size: 2rem;
+        color: rgb(59, 56, 56);
+        border-bottom: solid 3px rgb(36, 34, 34);
+        margin-bottom: 1.5rem;
+    }
+    
+    .conhecimento-text{
+        font-family: var(--front-secundary);
+        width: 100%;
+        font-size: 0.8rem;
+       
+    
+    }
+
+    .conhecimento-header h3{
+        font-family: var(--front-secundary);
+        font-size: 1.5rem;
+          
+    }
+
+
+    
+
+.conhecimento-header i{
+    font-size: 2rem;
+    font-style: normal;
+   
+}
+
+.conhecimentos-img-wrapper{
+    grid-column: 6 / 11;
+    grid-row: 3 / 6;
+    width: 100%;
+    margin-left: 1rem;
+}
+
+.bio-container{
+    
+    display: flex;
+    background: #ECE9E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    position: absolute;
+    width: 22rem;
+    height: 16rem;
+    justify-content: center;
+    margin-left: 0;
+    margin-top: 0;
+    border-radius: .3rem;
+    box-shadow: 0.3 0.2rem 0.3rem rgba(0, 0, 0, 0.7);
+    opacity: .8;
+}
+
+
+
+
+
+/* biografia */
+
+.banner-bio{
+
+    position: absolute;
+    top:35%;
+    left: 5%;
+    
+}
+
+.img-wrapper-bio{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+
+.img-wrapper-bio img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9; 
+    animation: zom 15s;
+}
+
+
+
+.bio{
+    position: relative;
+    width: 20rem;
+    height: 10rem;
+    margin-top: 10%;
+
+   
+}
+.bio-img-wrapper img{
+
+    object-fit: cover;
+    justify-content: center;
+    align-items: center;
+    width: 8rem;
+    height: 8rem;
+    margin-top: 1.2rem;
+    margin-right: 0rem;
+    border-radius: 5rem;
+    box-shadow: 0.1rem 0.2rem 0.2rem 0.1rem rgba(20, 19, 19, 0.863);
+
+}
+
+.bio-header h1{
+    font-family: var(--front-secundary);
+    font-size: 1.2em;
+    color: #000000e0;
+    position: absolute;
+    margin-left: 8rem;
+    margin-top: 0.5rem;
+}
+
+.bio-text p{
+
+    justify-content: center;
+    position: absolute;
+    margin-left: 9rem;
+    top: 3rem;    
+    font-size: 1rem;
+    color: black;
+    text-shadow: none;
+    
+}
+
+
+
+.social-list{
+
+margin-top: 1.1rem;   
+}
+
+.social-list a{
+margin: 0 2rem;
+color: whitesmoke;
+font-size: 1.3rem ;
+
+}
+
+.social-list i{
+    font-style: normal;
+}
+.social-list ul{
+
+    display: flex;
+}
+
+
+footer{
+    width: 100%;
+    height: 5rem;
+    margin-top: 0rem;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-content{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-content p{
+    font-family: var(--front-secundary);
+    color: whitesmoke;
+    font-size: 0.9rem;
+    margin-left: 1rem;
+
+}
+
+#link-topo{
+    position: fixed;
+    right: 1rem;
+    bottom: 4rem;
+    width: 3rem;
+    height: 3rem;
+    background: rgba(22, 21, 21, 0.966);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: .3rem;
+    box-shadow: 0 0.1rem 0.6rem #00000009;
+
+}
+
+.social-list a{
+margin: 0 2rem;
+color: whitesmoke;
+font-size: 1.3rem ;
+
+}
+
+.social-list i{
+    font-style: normal;
+}
+.social-list ul{
+
+    display: flex;
+}
+
+
+.footer-content-bio{
+
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.footer-content-bio p{
+    font-family: var(--front-secundary);
+    color: whitesmoke;
+    font-size: 1.2rem;
+}
+
+}
+
+@media  screen and (min-width: 710px){
+
+
+    .conhecimentos{
+        width: 100%;
+        
+
+    }
+
+    
+
+    
+    .conhecimento-text{
+        font-family: var(--front-secundary);
+        margin-top: 1rem;
+        font-size: 1rem;
+        width: 100%;
+        height: 100vh;
+        color: black;
+    }
+    .banner-bio{
+
+        position: absolute;
+        top:35%;
+        left: 8%;
+        
+    }
+
+    
+footer{
+    width: 100%;
+    height: 7rem;
+    margin-top: 0;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-content{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-content p{
+    font-family: var(--front-secundary);
+    color: whitesmoke;
+    font-size: 1.2rem;
+}
+
+.social-list a{
+margin: 0 2rem;
+color: whitesmoke;
+font-size: 1.3rem ;
+
+}
+
+.social-list i{
+    font-style: normal;
+}
+.social-list ul{
+
+    display: flex;
+}
+
+#link-topo{
+    position: fixed;
+    right: 3rem;
+    bottom: 3rem;
+    width: 3rem;
+    height: 3rem;
+    background: rgba(22, 21, 21, 0.966);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: .3rem;
+    box-shadow: 0 0.1rem 0.6rem #00000009;
+
+}
+
+body{
+
+    width: 100%;
+    height: 100vh;
+
+  }
+
+.bio-container{
+    
+    display: flex;
+    background: #ECE9E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    position: absolute;
+    width: 40rem;
+    height: 20rem;
+    justify-content: center;
+    margin-left: 5%;
+    margin-top: 0;
+    border-radius: .3rem;
+    box-shadow: 0.3 0.2rem 0.3rem rgba(0, 0, 0, 0.7);
+    opacity: .8;
+}
+
+
+
+
+.bio-header h1{
+    font-family: var(--front-secundary);
+    font-size: 2em;
+    color: #000000e0;
+    position: absolute;
+    margin-left: 10rem;
+}
+
+.bio-img-wrapper img{
+
+    object-fit: cover;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 5rem;
+    box-shadow: 0.1rem 0.2rem 0.2rem 0.1rem rgba(20, 19, 19, 0.863);
+
+}
+
+
+
+
+/* biografia */
+
+.banner-bio{
+
+    position: absolute;
+    top:35%;
+    left: 8%;
+    
+}
+
+.img-wrapper-bio{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+
+.img-wrapper-bio img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9; 
+    animation: zom 15s;
+}
+
+
+.bio-text p{
+
+    justify-content: center;
+    position: absolute;
+    margin-left: 10.5rem;
+    top: 3.5rem;    
+    font-size: 1.2rem;
+    color: black;
+    text-shadow: none;
+    
+}
+.bio{
+    position: relative;
+    width: 35rem;
+    height: 25rem;
+    margin-top: 10%;
+
+   
+}
+
+
+
+
+
+    
+}

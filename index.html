@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="pt-br">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="imagens/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="imagens/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="imagens/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Portfólio</title>
+</head>
+<body>
+    
+<div class="container">
+
+
+<!--Formatação do menu hamburguer-->
+    <div class="hamburguer">
+        <div class="line" id="line1"></div>
+        <div class="line" id="line2"></div>
+        <div class="line" id="line3"></div>
+        <span>Fechar</span>
+
+    </div>
+
+    <header>
+<!--embrulha a imagem dentro da div para facil manuseio-->
+<div class ="img-wrapper">
+<img src="imagens/bg.jpg" alt="">
+</div>
+<div class="banner">
+    <h1>Developer Full-Stack</h1>
+    <p>Tiago Santana Ferreira</p>
+    <!--Utilizar textos em letra minuscula para acessibilidade-->
+    <button onclick="window.location.href='/bio.html'">Saiba mais</button>
+    
+
+</div>
+    </header>
+
+    <!--menu-->
+    <!--A nível semantico aside fica melhor que div, pois se trata de um menu lateral-->
+    <aside class="sidebar">
+        <nav>
+            <ul class="menu">
+                <li class="menu-item"><a href="#" class="menu-link">Home</a></li>
+                <li class="menu-item"><a href="#conhecimentos" class="menu-link">Conhecimentos</a></li>
+                <li class="menu-item"><a href="#projetos" class="menu-link">Projetos</a></li>
+              <!--  <li class="menu-item"><a href="#" class="menu-link">Contato</a></li>
+                <li class="menu-item"><a href="#" class="menu-link">Orçamento</a></li>
+              -->
+            </ul>
+        </nav>
+
+
+            <!--link para as redes sociais-->
+<div class="social-media">
+    <i href="#" class="fab fa-facebook"></i>
+    <a href ="https://github.com/JamesCode-Ts"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/tiago-santana-66a13919b/"><i class ="fab fa-linkedin-in"></i></a>
+</div>
+
+    </aside>
+
+
+<section class="sessao-conhecimento" id="conhecimentos">
+    <div class="session-header">
+        <h1>Conhecimentos</h1>
+    </div>
+    <div class="conhecimentos">
+        <div class= "conhecimento">
+            <div class="conhecimento-header">
+            <i class="fab fa-html5"></i>
+            <h3>Html</h3>
+        </div>
+        
+            
+        
+    
+      <div class="conhecimento-text">
+        <p>Templates em Html, habilidades de estrutura de páginas web.
+             </p>
+      </div>
+      </div>
+       
+        <div class="conhecimento">
+            <div class="conhecimento-header">
+                <i class="fab fa-css3-alt"></i>
+                <h3>CSS</h3>
+                
+            </div>
+        
+        <div class="conhecimento-text">
+            <p> O estilo fala muito do desenvolvedor.
+            <br>Possui noções de estilização, e criatividade.</br>             
+            
+            </p>
+      </div>
+     </div>
+        <div class="conhecimento">
+            <div class="conhecimento-header">
+                <i class="fab fa-js"></i>
+                <h3>JavaScript</h3>
+                
+            
+        </div>
+        <div class="conhecimento-text">
+            <p>Linhagem utilizada no desenvolvimento <br>front-end.</br>
+                <br>Na parte de interações com o usuário e operações lógicas.</p>
+      </div>
+     </div>
+        <div class="conhecimento">
+            <div class="conhecimento-header">
+                <i class="fab fa-bootstrap"></i>
+                <h3>Bootstrap</h3>
+                
+        
+        </div>
+        <div class="conhecimento-text">
+            <p>
+                Ainda utilizo componentes do Bootstrap.
+                <br>Como data, hora e entre outros.</br>
+               
+            </p>
+      </div>
+     </div>
+     <div class="conhecimento">
+        <div class="conhecimento-header">
+            <i class="fab fa-java"></i>
+            <h3>Java</h3>
+            
+    
+     </div>
+     <div class="conhecimento-text">
+        <p> Linhagem principal no desenvolvimento Back-end.
+            <br>Tendo foco principal em Java web.</br>
+            <br>Arquiteturas: MVC,  API REST e RESTful.</br>
+
+        </p>
+      </div>
+     </div>
+
+  
+     <div class="conhecimento">
+      <div class="conhecimento-header">
+        <i class="fa fa-database"></i>
+        <h3>Banco de Dados</h3>
+        
+      </div>
+     
+     <div class="conhecimento-text">
+     <p>Responsável por fazer consultas SQL e criação de tabelas.
+        <br>Também possui conhecimentos de modelagem do banco, modelos lógicos e implementação.</br>
+    </p>
+     </div>
+     
+    </div>
+     
+    <div class="conhecimentos-img-wrapper">
+        <img src="imagens/test7.png" alt="imagen">
+    </div>
+</section>
+
+ <section class="sessao-projetos" id="projetos">
+
+      <div class="session-header">
+        <h1>Projetos</h1>
+      </div>
+
+     <div class="projetos">
+
+         <div class="card">
+
+              <div class="card-img-wrapper">
+                
+                <img src="imagens/card6.jpg" alt="imagem do projeto drogaria" />
+              </div>
+                   
+
+              <div class="card-info">
+                <h2>Drogaria</h2>
+                 <h3>HTML, CSS e JAVA</h3>
+               <p>Projeto Full-Stack de um Sistema <br>desenvolvido em Java Web</br>.</p>
+                 <button onclick="window.location.href='https://github.com/JamesCode-Ts/drogaria'">Saiba Mais</button>
+
+               </div>
+                
+                
+
+
+             
+    
+    
+            </div>
+      </div>
+            
+
+
+</section>
+
+     <footer>
+      <div class="footer-content">
+
+        <p>
+
+        Copyright &copy; 2022, Tiago Santana - Todos os direitos reservados
+        </p>
+
+        <div class="social-list">
+            <ul>
+            <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href=""><i class="fab fa-instagram"></i></a></li>
+            <li><a href=""><i class="fab fa-twitter"></i></a></li>
+            </ul>
+            </div>
+      </div>
+
+    </footer>
+
+    <a href="" id="link-topo">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+
+</div>
+</body>
+
+<script src="https://use.fontawesome.com/72ce00e0f5.js"></script>
+<script src="script.js"></script>
+</html>

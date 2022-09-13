@@ -4,7 +4,8 @@
   "description": "<<<<<<< HEAD # portfolio Potforlio do desenvolvedor",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "script.js"
   },
   "repository": {
     "type": "git",

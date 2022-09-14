@@ -8,8 +8,12 @@ const port = process.env.PORT || 3000;
 
 
 app.get("/", function (req, res) {
-res.send('index.html');
+res.send("Olá");
 
 });
 
 
+app.listen(port, function () {
+    console.info("Aplicação rodando em http://localhost:3000")
+
+});

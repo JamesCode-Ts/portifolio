@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000;
 
 
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/index.html'))});
+    res.sendFile(path.join(__dirname + '/index.html','style.css'))});
 
     app.get('/bio.html', function(req, res) {
         res.sendFile(path.join(__dirname + '/bio.html'))});

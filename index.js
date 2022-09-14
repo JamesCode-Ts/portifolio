@@ -1,14 +1,18 @@
 
 
-const app = require('express')()
-const path = require('path')
+const express = require("express");
+const app = express();
 
-// então, criamos uma rota para '/'
-app.get('/', (req, res) => {
-  // aqui precisamos enviar o index.html para o cliente
-  res.sendFile(path.join(__dirname + '/index.html'))
-})
 
-// no fim, iniciamos o serviço na porta 8001
-app.listen(8001)
-console.log('8001 é a porta mágica!')
+const port = process.env.PORT || 3000;
+
+
+app.get('/', function(req, res) {
+    res.sendFile( path.resolve('index.html') );
+});
+
+
+app.listen(port, function () {
+    console.info("Aplicação rodando em http://localhost:3000")
+
+});

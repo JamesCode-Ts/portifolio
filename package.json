@@ -1,0 +1,23 @@
+{
+  "name": "portifolio",
+  "version": "1.0.0",
+  "description": "<<<<<<< HEAD # portfolio Potforlio do desenvolvedor",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JamesCode-Ts/portifolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JamesCode-Ts/portifolio/issues"
+  },
+  "homepage": "https://github.com/JamesCode-Ts/portifolio#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}

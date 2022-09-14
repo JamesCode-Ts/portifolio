@@ -3,6 +3,7 @@
 const express = require("express");
 const app = express();
 app.use(express.static('estilos'))
+app.use(express.static('imagens'))
 const path = require('path')
 
 

@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000;
 
 
 app.get('/', function(req, res) {
-    res.sendFile( path.resolve('index.html') );
+    res.sendFile( path.resolve('index.html','bio.html') );
 });
 
 

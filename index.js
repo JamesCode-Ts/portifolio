@@ -11,7 +11,7 @@ const port = process.env.PORT || 3000;
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'))});
 
-    app.get('/', function(req, res) {
+    app.get('/bio.html', function(req, res) {
         res.sendFile(path.join(__dirname + '/bio.html'))});
 
 

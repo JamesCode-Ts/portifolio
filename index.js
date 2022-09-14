@@ -8,7 +8,7 @@ const port = process.env.PORT || 3000;
 
 
 app.get("/", function (req, res) {
-res.sendFile('/index.html') 
+res.sendFile('index.html') 
 
 });
 

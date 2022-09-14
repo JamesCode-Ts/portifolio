@@ -14,7 +14,7 @@ res.send(index.html);
 
 
 app.listen(port, function () {
-    var porta = process.env.PORT || 41492;
+   
     app.listen(port);
 
 });

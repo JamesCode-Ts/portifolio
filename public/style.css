@@ -319,6 +319,11 @@ header{
     grid-row: 6 / 7;
 }
 
+.conhecimento:nth-child(7){
+    grid-column: 3 / 6;
+    grid-row: 7 / 9;
+}
+
 /* Sessão de Conhecimentos */
 
 .session-header{

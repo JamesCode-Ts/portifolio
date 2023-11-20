@@ -416,19 +416,6 @@ color: rgb(243, 209, 13);
 
     color: rgba(68, 67, 67, 0.9);
 }
-/* Sessão de projetos */
-.projetos{
-
-   display: flex;
-   justify-content: space-evenly;
-
-}
-
-.card{
-    width: 18rem;
-    height: 28rem;
-    position: relative;
-}
 
 .card-img-wrapper{
 
@@ -531,6 +518,28 @@ transition: all .3s;
     
       }
      
+      .sessao-projetos {
+
+        margin-top: 8rem;
+      }
+/* Sessão de projetos */
+.projetos{
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+   
+ 
+ }
+ 
+ .card{
+    width: 18rem;
+    height: 28rem;
+    position: relative;
+    margin: 1rem;
+
+}
 
     .session-header h1{
         font-family: var(--font-primary);
@@ -538,12 +547,15 @@ transition: all .3s;
         color: rgb(59, 56, 56);
         border-bottom: solid 3px rgb(36, 34, 34);
         margin-bottom: 1.5rem;
+    
+       
     }
     
     .conhecimento-text{
         font-family: var(--front-secundary);
         width: 100%;
         font-size: 0.8rem;
+     
        
     
     }
@@ -777,7 +789,24 @@ font-size: 1.3rem ;
         
 
     }
+/* Sessão de projetos */
+.projetos{
 
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+ 
+ }
+ 
+ .card{
+     width: 18rem;
+     height: 28rem;
+     position: relative;
+     margin: 1rem;
+ }
+
+ 
 
     .conhecimento-text{
         font-family: var(--front-secundary);

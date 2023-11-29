@@ -602,7 +602,6 @@ transition: all .3s;
 
 
 
-
 /* biografia */
 
 .banner-bio{
@@ -670,7 +669,7 @@ transition: all .3s;
     position: absolute;
     margin-left: 9rem;
     top: 2.8rem;    
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: black;
     text-shadow: none;
     

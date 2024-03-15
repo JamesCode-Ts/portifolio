@@ -1,6 +1,6 @@
 
 # Portfolio
 
-Potforlio do desenvolvedor
+Site do desenvolvedor
 
 Site: https://tiagosantana.netlify.app/

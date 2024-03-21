@@ -1,6 +1,12 @@
 
 # Portfolio
 
+Neste projeto pude desenvolver um site de portfolio.
+
+Contendo meus pricipais trabalhos de desenvolvimento de software.
+
+Juntamente com minhas informações sobre linguagens e tecnologias que uso no dia-dia.
+
 Site do desenvolvedor
 
-Site: https://tiagosantana.netlify.app/
+https://tiagosantana.netlify.app/

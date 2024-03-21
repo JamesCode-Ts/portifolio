@@ -3,7 +3,7 @@
 
 Neste projeto pude desenvolver um site de portfolio.
 
-Contendo meus pricipais trabalhos de desenvolvimento de software.
+Contendo meus principais trabalhos de desenvolvimento de software.
 
 Juntamente com minhas informações sobre linguagens e tecnologias que uso no dia-dia.
 
